@@ -1,0 +1,43 @@
+---
+layout: default 
+---
+
+<article class="site-post lg-post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="align-center table width-full color-white text-shadow-medium pt6 pb4 article-side-padding" style="background: linear-gradient( rgba({{ page.color }}, {{ page.color-alpha }}), rgba({{ page.color }}, {{ page.color-alpha }}))
+    {% if page.hero-image %}, url({{ page.hero-image | prepend: site.url }}); background-size: cover; {% if page.hero-position %} background-position: {{ page.hero-position }} center; {% else %} background-position: center center; {% endif %} {% endif %}; height: 70vh">
+
+      {% include layout/subpage-logo.html %}
+      {% include layout/subpage-close.html %}
+
+      <div class="table-cell-middle pt5">
+        <h1 class="font-size-1 line-height-none py2 px3" itemprop="name headline">{{ page.title }}</h1>
+        <h3 class="font-size-3 font-weight-2 line-height-slight pt2 px3" itemprop="name alternativeHeadline">{{ page.subtitle }}</h3>
+        <p class="font-size-5 line-height-none pt5 opacity-8"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time></p>
+      </div>
+
+  </header>
+
+  <section class="width-full article-top-padding pb7">
+
+    <div class="post-content" itemprop="articleBody">
+      {{ content }}
+    </div>
+
+  </section>
+
+</article>
+
+{% include layout/footer.html %}
+
+<script>
+  if (sessionStorage.getItem("via") == "articles") {
+    document.getElementById("close-post").setAttribute("onclick", "window.history.back(); return false;");
+  }
+
+  {% include layout/scripts.js %}
+</script>
+
+{% if jekyll.environment == 'production' %}
+  {% include layout/analytics.html %}
+{% endif %}

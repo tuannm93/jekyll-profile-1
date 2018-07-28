@@ -1,0 +1,28 @@
+<header class="lg-header lg-table align-center bg-slate color-white py6">
+
+  <div class="lg-table-cell-middle">
+    <a href="{{ site.baseurl }}/">
+      {% include icons/icon-logo.svg width="64" height="64" stroke-width="3%" class="color-blue" %}
+    </a>
+    
+    {% if page.url == '/' %}<h1>{% endif %}
+    <a class="center-block color-white font-size-1 font-weight-4 line-height-title lowercase underline-none" href="{{ site.baseurl }}/">
+    {{ site.title }}
+    </a>
+    {% if page.url == '/' %}</h1>{% endif %}
+
+    {% if page.url == '/' %}<h3>{% endif %}
+    <span class="center-block font-size-7 uppercase tracking-super opacity-5">
+      Designer &amp; Developer
+    </span>
+    {% if page.url == '/' %}</h3>{% endif %}
+
+    
+    <p class="sm-header-tagline font-size-4 font-weight-2 my4 center-block" style="max-width: 19rem">
+      Passionate about creating<br /> digital products—obsessed with simplicity &amp; experience.
+    </p>
+  </div>
+
+  {% include layout/social-links.html %}
+
+</header>

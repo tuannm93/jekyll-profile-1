@@ -1,0 +1,54 @@
+<div class="site-home lg-page">
+
+  {% include layout/nav.html %}
+  {% include layout/header.html %}
+
+  <div class="p2">
+    <section class="width-full center-block align-center pb3">
+
+        {% for post in site.categories.work %}<div class="md-width-50 inline-block p2">
+          <a aria-label="Open Project" class="center-block color-white underline-none line-height-none text-shadow-medium box-shadow-medium br3 overflow-hidden" style="background: rgb({{ post.color }});" href="{{ post.url | prepend: site.baseurl }}">
+
+            <div class="center-block px3 pt5 pb2">
+                <h2 class="font-size-2">{{ post.title }}</h2>
+                <div class="block font-size-5 tracking-slight font-weight-5 py3">{{ post.subtitle }}</div>
+                <div class="inline-block font-size-6 font-weight-4 tracking-slight br5 px3 py2 mt1 mb2" style="background: rgba(0,0,0,0.14)">
+                  {{ post.year }} <small class="bullet inline-block-middle opacity-8">&bull;</small> {{ post.role }}
+                </div>
+            </div>
+
+            {% if post.cover-image %}
+            <img src="{{ post.cover-image | prepend: site.baseurl }}" width="450" height="400" class="project-img block width-full no-select" alt="{{ post.title }}" style="transition-delay: {{ forloop.index | times:150 }}ms" />
+            {% endif %}
+
+          </a>
+        </div>{% endfor %}
+
+        {% include layout/copyright.html %}
+
+    </section>
+
+  </div>
+
+</div>
+
+<script>
+  [].forEach.call(
+    document.querySelectorAll('.project-img'), 
+      function(e){
+        if(!e.complete){
+          e.setAttribute('data-imgload', 'queuefade');
+        }
+        e.onload = function() {
+          e.setAttribute('data-imgload', 'done');
+        }
+      }
+  );
+
+  sessionStorage.setItem("via", "home");
+  {% include layout/scripts.js %}
+</script>
+
+{% if jekyll.environment == 'production' %}
+  {% include layout/analytics.html %}
+{% endif %}

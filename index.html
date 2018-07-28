@@ -1,0 +1,14 @@
+---
+layout: default
+description: Pushing to create good design, simple apps, faster websites, and the best user experiences.
+sitemap:
+  lastmod: 2016-08-08
+  priority: 1
+  changefreq: 'monthly'
+---
+
+{% if site.show_splash == true %}
+  {% include layout/splash.html %}
+{% else %}
+  {% include layout/homepage.html %}
+{% endif %}

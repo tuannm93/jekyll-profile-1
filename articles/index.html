@@ -1,0 +1,53 @@
+---
+layout: default
+title: Articles
+description: A collection of my thoughts I like to share with the world... usually design or code related.
+permalink: /articles/
+sitemap:
+  lastmod: 2016-08-08
+  priority: 0.9
+  changefreq: 'weekly'
+---
+
+<div class="site-page lg-page lg-height-full">
+
+  {% include layout/nav.html %}
+
+  <article class="lg-article lg-table lg-height-full width-full pb7 article-top-padding article-side-padding">
+    <div class="lg-table-cell-middle">
+      <section class="section-max-width width-full">
+
+      <h1 class="font-size-1 line-height-none py3">{{ page.title }}</h1>
+
+      <ul class="list-reset" style="border-top: 0.125rem solid #eff1f5">
+        {% for post in site.categories.articles %}
+        <div style="border-bottom: .125rem solid #eff1f5">
+          <a href="{{ post.url | prepend: site.baseurl }}" class="article-link block color-gray underline-none line-height-title py3">
+            <time class="font-size-7 font-weight-6 line-height-default lg-right mt3">{{ post.date | date: "%B %-d, %Y" }}</time>
+            <h2 class="font-size-4 color-blue  line-height-none pt2 pb1">{{ post.title }}</h2>
+            <h4 class="font-size-5 pb1">{{ post.subtitle }}</h4>
+          </a>
+        </div>
+        {% endfor %}
+      </ul>
+
+      {% comment %}
+      <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+      {% endcomment %}
+
+    </section>
+    </div>
+  </article>
+
+  {% include layout/header.html %}
+
+</div>
+
+<script>
+  sessionStorage.setItem("via", "articles");
+  {% include layout/scripts.js %}
+</script>
+
+{% if jekyll.environment == 'production' %}
+  {% include layout/analytics.html %}
+{% endif %}

@@ -1,0 +1,31 @@
+
+# Site settings
+title: Tuan Nguyen Manh
+email: tuannm.work@gmail.com
+description: Web Designer & Developer from Hanoi, Vietnam
+tagline: Pushing to create good design, simple apps, faster websites, and the best user experiences.
+url: "https://tuannm.com/jekyll-profile-1"
+production_url: https://tuannm.com/jekyll-profile-1
+contact_email: tuannm.work@gmail.com
+google_analytics: UA-85292248-3
+
+# Splash page & drafts
+show_splash: false
+show_drafts: false
+
+# Build settings
+exclude: ["node_modules", "README", "README.md", bower.json", ".travis.yml", ".gitignore", ".gitattributes", ".gitmodules", "LICENSE", "CHANGELOG.md", "Gemfile", "Gemfile.lock"]
+markdown: kramdown
+sass:
+  style: compressed
+compress_html:
+  clippings: all
+  comments: ["/* ", " */"]
+  endings: all
+  blanklines: false
+  ignore:
+    envs: [development]
+
+# Jekyll plugins
+plugins:
+  - jekyll-sitemap

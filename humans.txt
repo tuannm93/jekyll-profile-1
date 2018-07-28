@@ -1,0 +1,19 @@
+# tuannm.com/jekyll-profile-1
+# This is the man in charge.
+
+# TEAM
+
+    Tuan Nguyen Manh -- Web Designer & Developer -- @tuannm
+
+# THANKS
+
+    Special thanks to my Wife! Hi, Wife! *Waves*
+
+# TECHNOLOGY COLOPHON
+
+    Built with Jekyll
+    Hosted on GitHub Pages
+    Styled with Tinyset
+    Iconified with Bytesize Icons
+    Crammed with Jekyll Compress
+    Image squeezed with ImageOptim

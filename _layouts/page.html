@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="site-page lg-page lg-height-full">
+
+  {% include layout/nav.html %}
+
+  <article class="lg-article lg-table lg-height-full width-full pb7 article-top-padding article-side-padding">
+    <div class="lg-table-cell-middle">
+      <section class="section-max-width width-full">
+
+        <h1 class="font-size-1 line-height-none pt3">{{ page.title }}</h1>
+        <div class="page-content">
+            {{ content }}
+        </div>
+
+      </section>
+    </div>
+  </article>
+
+  {% include layout/header.html %}
+
+</div>
+
+<script>
+  {% include layout/scripts.js %}
+</script>
+
+{% if jekyll.environment == 'production' %}
+  {% include layout/analytics.html %}
+{% endif %}
