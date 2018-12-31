@@ -11,7 +11,7 @@ sitemap:
   changefreq: 'monthly'
 ---
 
-![This is me!](/img/about/tuan-nguyen-manh.jpg){:id: .br3 }
+![This is me!](/img/about/tuannm.png){:id: .br3 }
 
 ### **I’m Tuan, a web designer living in Hanoi, Vietnam.**
 
